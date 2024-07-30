@@ -2,70 +2,77 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MonPetitPoro.MainPage"
-             Title="Mon Petit Poro">
+             Title=""
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             >
+    
+    <AbsoluteLayout>
+        <!-- Background Image -->
+        <Image Source="background_image.webp"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1"
+               Aspect="AspectFill" />
 
-    <Grid>
-        <!-- Définir les lignes pour le contenu et le bouton -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        <!-- Main Content -->
+        <Grid AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <!-- Define rows for content and buttons -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <!-- Contenu défilable -->
-        <ScrollView Grid.Row="0">
-            <VerticalStackLayout
-                Padding="30,0"
-                Spacing="25">
+            <!-- Scrollable content -->
+            <ScrollView Grid.Row="0">
+                <VerticalStackLayout
+                    Padding="30,0"
+                    Spacing="25">
 
-                <Image
-                    Source="lol_poro.png"
-                    HeightRequest="200"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Aspect="AspectFit"
-                    Margin="0,10,0,0"
-                />
-                <Label
-                    Text="Plongez dans l'univers de League of Legends avec Mon Petit Poro : pariez sans risque, vibrez comme un pro !"
-                    Style="{StaticResource SubHeadline}"
-                    SemanticProperties.HeadingLevel="Level2"
-                />
-                <Button
-                    x:Name="ListTeams"
-                    Text="Liste des équipes Lol répertoriées"
-                    Clicked="OnListClicked"
-                    HorizontalOptions="Fill"
-                    Margin="10,10,10,10"
-                />
-                <Label
-                    x:Name="test_token"
-                    Style="{StaticResource SubHeadline}"
-                    SemanticProperties.HeadingLevel="Level2"
-                 />
-            </VerticalStackLayout>
-        </ScrollView>
+                    <Image
+                        Source="lol_poro.png"
+                        HeightRequest="200"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Aspect="AspectFit"
+                        Margin="0,10,0,0" />
+                    <Label
+                        Text="Plongez dans l'univers de League of Legends avec Mon Petit Poro : pariez sans risque, vibrez comme un pro !"
+                        Style="{StaticResource SubHeadline}"
+                        SemanticProperties.HeadingLevel="Level2" />
+                    <Button
+                        x:Name="ListTeams"
+                        Text="Liste des équipes Lol répertoriées"
+                        Clicked="OnListClicked"
+                        HorizontalOptions="Fill"
+                        Margin="10,10,10,10" />
+                    <Label
+                        x:Name="test_token"
+                        Style="{StaticResource SubHeadline}"
+                        SemanticProperties.HeadingLevel="Level2" />
+                </VerticalStackLayout>
+            </ScrollView>
 
-        <!-- Bouton fixe en bas -->
-        <Button
-            Grid.Row="1"
-            x:Name="ConnexionBtn"
-            Text="Connecte-toi !"
-            SemanticProperties.Hint="Connexion"
-            Clicked="OnConnexionBtnClicked"
-            HorizontalOptions="Fill" 
-            VerticalOptions="End"
-            Margin="10,10,10,5"
-             />
-        <Button
-            Grid.Row="2"
-            x:Name="InscriptionBtn"
-            Text="Inscrit toi !"
-            SemanticProperties.Hint="Inscription"
-            Clicked="OnInscriptionBtnClicked"
-            HorizontalOptions="Fill" 
-            VerticalOptions="End"
-            Margin="10,5,10,10"
-             />
-    </Grid>
+            <!-- Fixed button at the bottom -->
+            <Button
+                Grid.Row="1"
+                x:Name="ConnexionBtn"
+                Text="Connecte-toi !"
+                SemanticProperties.Hint="Connexion"
+                Clicked="OnConnexionBtnClicked"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="10,10,10,5" />
+            <Button
+                Grid.Row="2"
+                x:Name="InscriptionBtn"
+                Text="Inscrit toi !"
+                SemanticProperties.Hint="Inscription"
+                Clicked="OnInscriptionBtnClicked"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="10,5,10,10" />
+        </Grid>
+    </AbsoluteLayout>
 </ContentPage>

@@ -10,7 +10,8 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		configuration = config;
-	}
+        NavigationPage.SetHasNavigationBar(this, false);
+    }
 
     protected override async void OnAppearing()
     {
