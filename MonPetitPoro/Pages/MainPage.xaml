@@ -5,14 +5,17 @@
              Title=""
              NavigationPage.HasNavigationBar="False"
              Shell.NavBarIsVisible="False"
+             Shell.NavBarHasShadow="False"
+             Shell.BackgroundColor="Black"
              >
     
     <AbsoluteLayout>
         <!-- Background Image -->
-        <Image Source="background_image.webp"
+        <Image Source="background.jpg"
                AbsoluteLayout.LayoutFlags="All"
-               AbsoluteLayout.LayoutBounds="0,0,1,1"
-               Aspect="AspectFill" />
+               AbsoluteLayout.LayoutBounds="1,1,1,1"
+               Opacity="0.75"
+               Aspect="Fill" />
 
         <!-- Main Content -->
         <Grid AbsoluteLayout.LayoutFlags="All"
@@ -30,6 +33,7 @@
                     Padding="30,0"
                     Spacing="25">
 
+                    <!--
                     <Image
                         Source="lol_poro.png"
                         HeightRequest="200"
@@ -37,25 +41,26 @@
                         VerticalOptions="Center"
                         Aspect="AspectFit"
                         Margin="0,10,0,0" />
-                    <Label
-                        Text="Plongez dans l'univers de League of Legends avec Mon Petit Poro : pariez sans risque, vibrez comme un pro !"
-                        Style="{StaticResource SubHeadline}"
-                        SemanticProperties.HeadingLevel="Level2" />
+                    -->
+                    <Frame Style="{StaticResource FrameTextStyle}"  HasShadow="True">
+                        <Label Style="{StaticResource TextStyle}"
+                            Text="Plongez dans l'univers de League of Legends avec Mon Petit Poro : 
+                               Pariez sans risque, vibrez comme un pro !"
+                            SemanticProperties.HeadingLevel="Level1" FontAutoScalingEnabled="False" />
+                    </Frame>
+                    <!--
                     <Button
                         x:Name="ListTeams"
                         Text="Liste des équipes Lol répertoriées"
                         Clicked="OnListClicked"
                         HorizontalOptions="Fill"
                         Margin="10,10,10,10" />
-                    <Label
-                        x:Name="test_token"
-                        Style="{StaticResource SubHeadline}"
-                        SemanticProperties.HeadingLevel="Level2" />
+                    -->
                 </VerticalStackLayout>
             </ScrollView>
 
             <!-- Fixed button at the bottom -->
-            <Button
+            <Button Style="{StaticResource PrimaryButtonStyle}"
                 Grid.Row="1"
                 x:Name="ConnexionBtn"
                 Text="Connecte-toi !"
@@ -64,10 +69,10 @@
                 HorizontalOptions="Fill"
                 VerticalOptions="End"
                 Margin="10,10,10,5" />
-            <Button
+            <Button Style="{StaticResource PrimaryButtonStyle}"
                 Grid.Row="2"
                 x:Name="InscriptionBtn"
-                Text="Inscrit toi !"
+                Text="Inscris toi !"
                 SemanticProperties.Hint="Inscription"
                 Clicked="OnInscriptionBtnClicked"
                 HorizontalOptions="Fill"

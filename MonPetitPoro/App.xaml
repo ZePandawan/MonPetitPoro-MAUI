@@ -5,10 +5,51 @@
              x:Class="MonPetitPoro.App">
     <Application.Resources>
         <ResourceDictionary>
+                <!--
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml"
             </ResourceDictionary.MergedDictionaries>
+                -->
+            <Color x:Key="PrimaryColor">#23c7de</Color>
+            <Color x:Key="SecondaryColor">#f9d872</Color>
+            <Color x:Key="TextPrimaryColor">#fffef9</Color>
+            <Color x:Key="ButtonGradientColor">#0f7f91</Color>
+
+            <LinearGradientBrush x:Key="ButtonGradientBrush"  
+                             StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{StaticResource ButtonGradientColor}" Offset="0"/>
+                <GradientStop Color="{StaticResource PrimaryColor}" Offset="0.5"/>
+                <GradientStop Color="{StaticResource ButtonGradientColor}" Offset="1"/>
+            </LinearGradientBrush>
+
+            <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="{StaticResource ButtonGradientBrush}" />
+                <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="HeightRequest" Value="75" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontFamily" Value="FrizQuadrataRegular" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="TextStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="FrizQuadrataRegular" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="FrameTextStyle" TargetType="Frame">
+                <Setter Property="Background" Value="{StaticResource ButtonGradientBrush}" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="40,10,40,10" />
+                <Setter Property="Margin" Value="0,15,0,0" />
+                <Setter Property="BorderColor" Value="Gold" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
